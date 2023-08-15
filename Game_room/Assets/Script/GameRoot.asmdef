@@ -1,0 +1,16 @@
+{
+    "name": "GameRoot",
+    "rootNamespace": "GameRoot",
+    "references": [
+        "GUID:ff1a0afdc615df44e9eed13d42cd4d2b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
