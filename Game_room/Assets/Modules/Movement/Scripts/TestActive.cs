@@ -4,7 +4,7 @@ namespace Movement
 {
     internal class TestActive : MonoBehaviour
     {
-        [SerializeField] private CharacterMovement _character;
+        [SerializeField] private MovementInput _character;
         private void Awake()
         {
             _character.Activate();

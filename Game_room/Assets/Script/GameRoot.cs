@@ -1,18 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Movement;
 
-public class GameRoot : MonoBehaviour
+internal class GameRoot : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private MovementInput _input;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        _input.Activate();
     }
 }
