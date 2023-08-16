@@ -2,12 +2,12 @@ using UnityEngine;
 
 namespace Movement
 {
-    internal class TestActive : MonoBehaviour
+    internal class MoveTestActive : MonoBehaviour
     {
         [SerializeField] private MovementInput _character;
         private void Awake()
         {
-            _character.Activate();
+            _character.Activate();  
         }
     }
 }

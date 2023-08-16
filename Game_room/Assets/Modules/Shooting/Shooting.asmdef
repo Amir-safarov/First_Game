@@ -1,10 +1,7 @@
 {
-    "name": "GameRoot",
-    "rootNamespace": "GameRoot",
-    "references": [
-        "GUID:ff1a0afdc615df44e9eed13d42cd4d2b",
-        "GUID:d88b781605e7a2b4e819ba2034767113"
-    ],
+    "name": "Shooting",
+    "rootNamespace": "Shooting",
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

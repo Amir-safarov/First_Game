@@ -43,13 +43,17 @@ namespace Movement
         }
         internal void Flip()
         {
-            if((_isRightDirection && _horizontal <0f) || (!_isRightDirection && _horizontal > 0f))
+            if ((_isRightDirection && _horizontal < 0f) || (!_isRightDirection && _horizontal > 0f))
             {
+                _isRightDirection = !_isRightDirection;
+                transform.Rotate(0, 180, 0);
+            }
+            /*{
                 _isRightDirection = !_isRightDirection;
                 localeScale = transform.localScale;
                 localeScale.x *= -1f;
                 transform.localScale = localeScale;
-            }
+            }*/
         }
 
         private bool IsGrounded()
