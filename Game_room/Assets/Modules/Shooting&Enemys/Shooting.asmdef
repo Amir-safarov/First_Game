@@ -1,9 +1,8 @@
 {
-    "name": "GameRoot",
-    "rootNamespace": "GameRoot",
+    "name": "ShootingAndEnemys",
+    "rootNamespace": "ShootingAndEnemys",
     "references": [
-        "GUID:ff1a0afdc615df44e9eed13d42cd4d2b",
-        "GUID:d88b781605e7a2b4e819ba2034767113"
+        "GUID:6bb050e319f5ff24cb3718ac01f4fce8"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
