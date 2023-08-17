@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 350158358}
   - component: {fileID: 350158359}
   m_Layer: 0
-  m_Name: Body
+  m_Name: BodyPice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -511,8 +511,8 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 64
-  _movementSpeed: 3
-  _jumpForce: 10
+  _movementSpeed: 5
+  _jumpForce: 7
 --- !u!50 &1800564818
 Rigidbody2D:
   serializedVersion: 4
@@ -599,7 +599,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800564814}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.677, y: 0.238, z: 0.23113097}
+  m_LocalPosition: {x: 1.927, y: 0.175, z: 0.23113097}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -849,7 +849,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &2136085135
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -936,7 +936,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136085133}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.31, y: 0.86, z: 0}
+  m_LocalPosition: {x: 4.31, y: 0.735, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -957,4 +957,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 40
   _speed: 3
-  _targetPlayer: {fileID: 1800564823}
+  _targetPlayer: {fileID: 350158358}
