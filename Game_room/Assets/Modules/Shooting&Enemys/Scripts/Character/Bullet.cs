@@ -15,6 +15,7 @@ namespace ShootingAndEnemys
             _bullet.velocity = transform.right * _bulletSpeed;
             Destroy(gameObject, _lifeTime);
         }
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();

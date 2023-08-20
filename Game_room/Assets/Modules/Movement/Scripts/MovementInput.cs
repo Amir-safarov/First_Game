@@ -13,6 +13,7 @@ namespace Movement
                 return;
             _character.Flip();
             _character.Jump();
+            _character.StartDash();
 
         }
         public void Activate()
