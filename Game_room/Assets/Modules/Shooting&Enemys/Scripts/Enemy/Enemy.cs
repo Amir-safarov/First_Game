@@ -4,18 +4,18 @@ using UnityEngine;
 
 namespace ShootingAndEnemys
 {
-    public class Enemy : MonoBehaviour
+    internal class Enemy : MonoBehaviour
     {
         [SerializeField] private int _health;
         [SerializeField] private float _speed;
-        [SerializeField] private Transform _targetPlayer;
+        public Transform _targetPlayer;
+        [SerializeField] private bool _isRightDirection;
 
         private Rigidbody2D _rb;
         private float _distance;
 
         private const float _distanceRange = 1.05f;
         private const float _maxJumpValue = 0.9f;
-
 
         private void Awake()
         {
@@ -24,6 +24,7 @@ namespace ShootingAndEnemys
         private void Update()
         {
             MoveToTarget();
+            Flip();
         }
 
         private void MoveToTarget()
@@ -32,11 +33,11 @@ namespace ShootingAndEnemys
             if (_distance <= _distanceRange)
             {
                 _rb.velocity = Vector2.zero;
-                _rb.bodyType = RigidbodyType2D.Kinematic; 
+                _rb.bodyType = RigidbodyType2D.Kinematic;
             }
             else
             {
-                _rb.bodyType = RigidbodyType2D.Dynamic; 
+                _rb.bodyType = RigidbodyType2D.Dynamic;
                 if (Mathf.Abs(transform.position.y - _targetPlayer.position.y) <= _maxJumpValue)
                 {
                     Vector2 direction = (_targetPlayer.position - transform.position).normalized;
@@ -46,10 +47,20 @@ namespace ShootingAndEnemys
                     _rb.velocity = Vector2.zero;
             }
         }
+        internal void Flip()
+        {
+            if ((_isRightDirection && (_targetPlayer.transform.position.x < transform.position.x))
+                || (!_isRightDirection && (_targetPlayer.transform.position.x > transform.position.x)))
+            {
+                _isRightDirection = !_isRightDirection;
+                transform.Rotate(0, 180, 0);
+            }
+
+        }
         public void TakeDamage(int damage)
         {
             _health -= damage;
-            if (_health >= 0)
+            if (_health <= 0)
                 Destroy(gameObject);
         }
     }

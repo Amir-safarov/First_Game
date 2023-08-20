@@ -9,7 +9,7 @@ namespace Movement
         [SerializeField] private LayerMask _layerMask;
         [SerializeField] private float _movementSpeed;
         [SerializeField, Range(0.1f, 50)] private float _jumpForce;
-        [SerializeField, Range(500f, 5000)] private float _dashForce;
+        [SerializeField, Range(5000f, 10000)] private float _dashForce;
         [SerializeField] private TrailRenderer _tr;
         [SerializeField] private Animator _anim;
 
@@ -30,11 +30,7 @@ namespace Movement
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
-            if (TryGetComponent<BoxCollider2D>(out BoxCollider2D collider2D))
-            {
-                Debug.Log("Есть компонент");
-                _collider = GetComponent<BoxCollider2D>();
-            }
+            _collider = GetComponent<BoxCollider2D>();
         }
 
         private void Update()
@@ -94,13 +90,9 @@ namespace Movement
             _rb.gravityScale = 0;
             _tr.emitting = true;
             if (_isRightDirection)
-            {
                 _rb.AddForce(Vector2.right * _dashForce);
-            }
             else
-            {
                 _rb.AddForce(Vector2.left * _dashForce);
-            }
             yield return new WaitForSeconds(_dashingTime);
             _tr.emitting = false;
             _rb.gravityScale = _originalGravity;
